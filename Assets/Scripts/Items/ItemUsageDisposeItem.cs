@@ -9,10 +9,6 @@ namespace AFSInterview.Items
 	)]
 	public class ItemUsageDisposeItem : ItemUsage
 	{
-		[Header("Settings")]
-		[SerializeField]
-		private int toAdd = 0;
-
 		public override void Use(Item item, InventoryController targetInventory)
 		{
 			targetInventory.RemoveItem(item);

@@ -182,8 +182,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a1cf566a8ef28ff4e8f70fcbbccf60fb, type: 2}
     - {fileID: 11400000, guid: d74000505f84bfa4ba95b7ced2bc24ad, type: 2}
   money: 280
-  itemToUse: -1
-  doUse: 0
 --- !u!4 &117263
 Transform:
   m_ObjectHideFlags: 0
