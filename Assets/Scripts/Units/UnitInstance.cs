@@ -43,7 +43,7 @@ namespace AFSInterview.Units
 
 		private void OnDamage(UnitData data, int damage)
 		{
-
+			
 		}
 
 		//Primitive death animation, usually animator or DoTween should be considered
