@@ -6,14 +6,38 @@
 
 	public class InventoryController : MonoBehaviour
 	{
+		[Header("Contents")]
 		[SerializeField] private List<Item> items;
 		[SerializeField] private int money;
+
+#if UNITY_EDITOR
+		//Primitive debug mechanism for inspector
+		[Header("Debug\nEnter index of item and then check 'doUse'")]
+		[SerializeField] private int itemToUse = -1;
+		[SerializeField] private bool doUse = false;
+#endif
 
 		public int Money => money;
 		public int ItemsCount => items.Count;
 
 		public event Action onInventoryChange = null;
 		public event Action onMoneyChange = null;
+
+#if UNITY_EDITOR
+		//Primitive debug mechanism for inspector
+		//It would be better to implement PropertyDrawer with Button functionality
+		//...but it's not the point of the task
+		private void Update()
+		{
+			if(doUse)
+			{
+				UseItem(itemToUse);
+
+				doUse = false;
+				itemToUse = -1;
+			}
+		}
+#endif
 
 		public void SellAllItemsUpToValue(int maxValue)
 		{
@@ -62,6 +86,7 @@
 		public void AddItem(Item item)
 		{
 			items.Add(item);
+			onInventoryChange?.Invoke();
 		}
 		public void RemoveItem(Item item)
 		{
