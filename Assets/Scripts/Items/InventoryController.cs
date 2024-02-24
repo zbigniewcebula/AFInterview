@@ -14,9 +14,10 @@
 
 		public event Action onInventoryChange = null;
 		public event Action onMoneyChange = null;
-		
+
 		public void SellAllItemsUpToValue(int maxValue)
 		{
+			/*	//Bugged approach
 			for (var i = 0; i < items.Count; i++)
 			{
 				var itemValue = items[i].Value;
@@ -25,6 +26,36 @@
 				
 				money += itemValue;
 				items.RemoveAt(i);
+			}
+			*/
+
+			//Non-Linq approach (most optimal)
+			int initialCount = items.Count;
+			for(int i = 0; i < items.Count; ++i)
+			{
+				var itemValue = items[i].Value;
+				if(itemValue > maxValue)
+					continue;
+
+				money += itemValue;
+				//change of collection causes leaps over some items
+				items.RemoveAt(i);
+				--i;
+			}
+
+			/*	//Linq approach (shortest and readable)
+			money += items
+				.Where(itm => itm.Value < maxValue)
+				.Sum(itm => itm.Value);
+			items.RemoveAll(itm => itm.Value < maxValue);
+			*/
+
+			int diff = initialCount - items.Count;
+			Debug.Log($"Sold: {diff}");
+			if(diff > 0)
+			{
+				onMoneyChange?.Invoke();
+				onInventoryChange?.Invoke();
 			}
 		}
 
