@@ -276,6 +276,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 278868168}
+  - component: {fileID: 278868169}
   m_Layer: 0
   m_Name: Army1
   m_TagString: Untagged
@@ -298,6 +299,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &278868169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278868167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f40724056a85cf4783842acd81888e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 3596097116356542771, guid: 6734b3c6fa078eb419e06fc661aec774,
+    type: 3}
+  initialData: {fileID: 11400000, guid: b6b31c651f5ac94459b6d9ab000f26c7, type: 2}
 --- !u!1 &717833686
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,6 +694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1353391285}
+  - component: {fileID: 1353391286}
   m_Layer: 0
   m_Name: Army2
   m_TagString: Untagged
@@ -700,6 +717,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1353391286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353391284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f40724056a85cf4783842acd81888e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitPrefab: {fileID: 3596097116356542771, guid: 6734b3c6fa078eb419e06fc661aec774,
+    type: 3}
+  initialData: {fileID: 11400000, guid: d724ec0ed76b0694ea51a6fb23eb675a, type: 2}
 --- !u!1 &1464522872
 GameObject:
   m_ObjectHideFlags: 0
