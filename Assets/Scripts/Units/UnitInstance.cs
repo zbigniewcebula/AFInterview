@@ -43,7 +43,10 @@ namespace AFSInterview.Units
 
 		private void OnDamage(UnitData data, int damage)
 		{
-			
+			//Please see: DamageParticlePool.cs (Object Pool Pattern)
+			Visuals.DamageParticlePool.Spawn(
+				transform.position + Vector3.up, damage
+			);
 		}
 
 		//Primitive death animation, usually animator or DoTween should be considered

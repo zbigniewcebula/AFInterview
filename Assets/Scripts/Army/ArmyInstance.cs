@@ -35,7 +35,9 @@ namespace AFSInterview.Army
 
 				//Scatter units randomly around army center (overlaping looks bad)
 				instance.transform.position = transform.position + new Vector3(
-					UnityEngine.Random.value, 0f, i * 1.5f - count / 2f
+					i%2 == 0? -1: 1,
+					0f,
+					i * 1.5f - count / 2f
 				);
 
 				units.Add(instance);
